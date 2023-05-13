@@ -15,17 +15,19 @@ public class Jugador {
 		this.DNI = DNI;
 		this.ganar = false;
 		carton = new ArrayList<Integer>();
-		/*
-		 * Establecemos un numero tope para cuando llegue a 90 se pare y ademas si el
-		 * numero esta ya metido en el carton no se mete
-		 * 
-		 */
+		this.generarCarton();		
+	}
+	/**
+	 * Establecemos un numero tope para cuando llegue a 90 se pare y ademas si el
+	 * numero esta ya metido en el carton no se mete
+	 * @return 
+	 */
+	private void generarCarton(){
 		int numero = 0;
 		int tope = 10;
 		int minimo = 1;
 		while (tope < 91) {
 			for (int j = 0; j < 2; j++) {
-
 				numero = (int) (Math.random() * 10 + minimo);
 				if (!carton.contains(numero)) {
 					carton.add(numero);
@@ -44,7 +46,7 @@ public class Jugador {
 		}
 		return devolver;
 	}
-	public void tacharNumero(int numero) {
+	public void tacharNumero(Integer numero) {
 		carton.remove(numero);
 	}
 
@@ -71,7 +73,9 @@ public class Jugador {
 	public void setDNI(String dNI) {
 		DNI = dNI;
 	}
-
+	public ArrayList<Integer> getCarton() {
+		return carton;
+	}
 	public String toString() {
 		return nombre + carton.toString();
 	}

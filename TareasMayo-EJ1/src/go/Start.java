@@ -1,18 +1,28 @@
 package go;
 
+import java.util.ArrayList;
+
+import ayuda.Juego;
 import bingo.Bingo;
 import bingo.Jugador;
 
 public class Start {
 	public static void main(String[] args) {
 		
-		Bingo uno = new Bingo();
+		Jugador Pepe = new Jugador("Pepe","skhdvbkdh");
+		Jugador Juan = new Jugador("Juan","skhdvbkdh");
+		Jugador Pablo = new Jugador("Pablo","skhdvbkdh");
+		Jugador Jnadro = new Jugador("Jnadro","skhdvbkdh");
+		Jugador Roberto = new Jugador("Roberto","skhdvbkdh");
 		
-		System.out.println(uno);
-		Jugador dos = new Jugador("Pepe Luis","34293782T");
-		System.out.println(dos);
-		uno.extraerNumero();
-		System.out.println(uno);
-
+		ArrayList<Jugador> Jugadores = new ArrayList<Jugador>();
+		Jugadores.add(Roberto);
+		Jugadores.add(Pepe);
+		Jugadores.add(Jnadro);
+		Jugadores.add(Pablo);
+		Jugadores.add(Juan);
+		
+		Juego Juego1 = new Juego(Jugadores);
+		System.out.println(Juego1.HayAlgunGanador());
 	}
 }

@@ -36,5 +36,4 @@ public class Bingo {
 	public String toString() {
 		return numeros.toString();
 	}
-	
 }
