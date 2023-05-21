@@ -39,13 +39,6 @@ public class Jugador {
 			tope += 10;
 		}
 	}
-	public boolean estaVacio() {
-		boolean devolver = false;
-		if(carton.size()==0) {
-			devolver = true;
-		}
-		return devolver;
-	}
 	public void tacharNumero(Integer numero) {
 		carton.remove(numero);
 	}

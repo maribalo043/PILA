@@ -4,22 +4,18 @@ import java.util.Comparator;
 
 import tienda.Producto;
 
-public class ComparatorId implements Comparator<Producto> {
+public class ComparatorProductos implements Comparator<Producto>{
 
 	@Override
 	public int compare(Producto o1, Producto o2) {
-		
-		boolean esIgual = false;
+		boolean esIgual = o1.equals(o2);
 		int devolver = 0;
-
-		esIgual = o1.getCodigo().equals(o2.getCodigo());
-		
-		if (esIgual) {
-			devolver = 0;
-		} else {
+		if(esIgual) {
 			devolver = 1;
+		}else {
+			devolver = 0;
 		}
-		
 		return devolver;
 	}
+
 }

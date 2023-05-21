@@ -2,31 +2,34 @@ package utilidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-
+import java.io.IOException;	
 import tienda.Producto;
 
 public class Read {
 	
-	private final String FICHERO = "C:\\Users\\mario\\Documents\\datos.txt";
 	/**
 	 * Lee una línea de un fichero de texto y los saca por pantalla
 	 */
-	public ArrayList<Producto> getDatos(int numero) {
+	public Producto getDatos(String fichero) {
 		
 		// creo una variable que permite conectar con un fichero para poder leer sus líneas
 		BufferedReader ficheroEntrada;
 		
-		
+		Producto devolver = null;
         try {
-        	// BufferedReader enlaza con un fichero; para ello en java hay que crear un FileReader
-            ficheroEntrada = new BufferedReader(new FileReader(FICHERO));
- 
-            // leo una nombre del fichero          
-            String nombre=ficheroEntrada.readLine();
+        	// BufferedReader enlaza con un fichero; para ello en java 
+        	//hay que crear un FileReader
+            ficheroEntrada = new BufferedReader(new FileReader(fichero));
             
-                     
+            
+            
+            
+            String Codigo=ficheroEntrada.readLine();
+            String Nombre=ficheroEntrada.readLine();
+            String cantidad=ficheroEntrada.readLine();
+            String precio=ficheroEntrada.readLine();
+            
+            devolver = new Producto(Codigo,Nombre,cantidad,precio);
             ficheroEntrada.close();
         }
         catch (IOException e) {
@@ -36,6 +39,6 @@ public class Read {
 			// Otro fallos
 			e.printStackTrace();
 		}
-		return null;
+		return devolver;
 	}
 }

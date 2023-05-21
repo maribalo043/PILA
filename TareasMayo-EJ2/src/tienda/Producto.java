@@ -4,10 +4,10 @@ public class Producto {
 	
 	private String Codigo;
 	private String Nombre;
-	private int Cantidad;
-	private double Precio;
+	private String Cantidad;
+	private String Precio;
 	
-	public Producto (String codigo, String nombre, int cantidad, float precio) {
+	public Producto (String codigo, String nombre, String cantidad, String precio) {
 		this.Codigo = codigo;
 		this.Nombre = nombre;
 		this.Cantidad = cantidad;
@@ -30,25 +30,25 @@ public class Producto {
 		Nombre = nombre;
 	}
 
-	public int getCantidad() {
+	public String getCantidad() {
 		return Cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
+	public void setCantidad(String cantidad) {
 		Cantidad = cantidad;
 	}
 
-	public double getPrecio() {
+	public String getPrecio() {
 		return Precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(String precio) {
 		Precio = precio;
 	}
 
 	public String toString() {
 		
 		return "Producto"+Codigo+","+Nombre
-				+",N:"+Cantidad + "Presio" + ""+Precio+"$";
+				+",N:"+Cantidad + "Presio" +": "+Precio+"$";
 	}
 }
