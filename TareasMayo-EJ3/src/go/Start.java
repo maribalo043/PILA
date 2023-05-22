@@ -17,7 +17,7 @@ public class Start {
 		}
 		System.out.println(Cines.getPeliculas());
 		System.out.println(Cines.getCines());
-		
+		 
 		
 	}
 }
