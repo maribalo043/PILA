@@ -16,7 +16,7 @@ public class Start {
 		Iterator<Cine> cines = Read.leer(Read.FICHEROC,Read.FICHEROP);
 		
 		Write escribir = new Write();
-		
+		 
 		escribir.escribirFichero(cines);
 		
 	}
