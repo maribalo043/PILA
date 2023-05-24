@@ -13,41 +13,16 @@ public class Read {
 
 	public HashMap<String, Pelicula> getPelicula(String fichero) throws IOException {
 		HashMap<String, Pelicula> devolver = new HashMap<String, Pelicula>();
-
-		try {
-			BufferedReader lector = new BufferedReader(new FileReader(fichero));
-
-			String nombre;
-			try {
-				nombre = lector.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
-				nombre = null;
-			}
-			ArrayList<String> lista =new ArrayList<String>();
-			String codigo = "";
-			while (nombre != null) {
-
-				Pelicula pelicula = new Pelicula("", "", "",lista);
-
-				pelicula.setTitulo(nombre);
-				pelicula.setDirector(lector.readLine());
-				pelicula.setAño(lector.readLine());
-				nombre = lector.readLine();
-				SeparadorCodigos separador = new SeparadorCodigos();
-				codigo = separador.separarCodigo(nombre, 1);
-				pelicula.getCines().add(codigo);
-				codigo = separador.separarCodigo(nombre, 2);
-				pelicula.getCines().add(codigo);
-				for(int contador =0 ;;contador++) {
-					devolver.put(pelicula.getCines().get(contador), pelicula);
-				}
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		BufferedReader lector = new BufferedReader(new FileReader(fichero));
+		String nombre = lector.readLine();
+		Pelicula pelicula = new Pelicula("","","",new ArrayList<String>());
+		pelicula.setTitulo(nombre);
+		pelicula.setDirector(lector.readLine());
+		pelicula.setAño(lector.readLine());
+		nombre = lector.readLine();
+		SeparadorCodigos separador = new SeparadorCodigos();
+		pelicula.getCines().add(separador.separarCodigo(nombre, 0));
+		pelicula.getCines().add(separador.separarCodigo(nombre, 1));
 		return devolver;
 	}
 

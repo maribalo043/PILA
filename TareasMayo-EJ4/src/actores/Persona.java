@@ -1,16 +1,20 @@
 package actores;
 
+import java.util.ArrayList;
+
 public class Persona {
 
 	private String DNI;
 	private String Nombre;
 	private String fechaNacimiento;
+	private ArrayList<Coche> Coches;
 	
 	public Persona (String DNI,String nombre, String fecha) {
 		
 		this.DNI = DNI;
 		this.Nombre = nombre;
 		this.fechaNacimiento = fecha;
+		Coches = new ArrayList<Coche>();
 	}
 
 	public String getDNI() {
