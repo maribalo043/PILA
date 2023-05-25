@@ -8,7 +8,7 @@ import utilidades.Write;
 
 public class Pila {
 
-	private ArrayList<Integer> pila;
+	private ArrayList<Integer> pila; 
 	private int cuantosNumeros;
 
 	/**
